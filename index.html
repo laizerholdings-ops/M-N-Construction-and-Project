@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M N CONSTRUCTION AND PROJECT | Architectural & Construction Excellence</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0B0C0E',
+                        charcoal: '#131518',
+                        slateDark: '#1C1F24',
+                        champagne: '#C8A97E',
+                        champagneLight: '#DFC59F',
+                        alabaster: '#F8F7F4',
+                        warmPaper: '#F2F0EC',
+                        stoneGray: '#8E9299',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    letterSpacing: {
+                        widestPlus: '0.25em',
+                        architectural: '0.16em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Theme CSS Variables for Seamless Day / Night Transitions */
+        :root {
+            --bg-primary: #FAF9F6;
+            --bg-secondary: #F0EFEA;
+            --bg-card: #FFFFFF;
+            --text-primary: #141619;
+            --text-secondary: #4B5058;
+            --text-muted: #717680;
+            --border-subtle: rgba(20, 22, 25, 0.08);
+            --accent-gold: #B08D57;
+            --accent-gold-hover: #967543;
+            --nav-scrolled: rgba(250, 249, 246, 0.88);
+            --hero-overlay-top: rgba(250, 249, 246, 0.55);
+            --hero-overlay-mid: rgba(250, 249, 246, 0.35);
+            --hero-overlay-bot: rgba(250, 249, 246, 0.96);
+        }
+
+        html.dark {
+            --bg-primary: #0B0C0E;
+            --bg-secondary: #131518;
+            --bg-card: #0F1114;
+            --text-primary: #F8F7F4;
+            --text-secondary: rgba(248, 247, 244, 0.82);
+            --text-muted: #8E9299;
+            --border-subtle: rgba(255, 255, 255, 0.09);
+            --accent-gold: #C8A97E;
+            --accent-gold-hover: #DFC59F;
+            --nav-scrolled: rgba(11, 12, 14, 0.88);
+            --hero-overlay-top: rgba(11, 12, 14, 0.78);
+            --hero-overlay-mid: rgba(11, 12, 14, 0.48);
+            --hero-overlay-bot: rgba(11, 12, 14, 0.98);
+        }
+
+        /* Smooth Global Theme Transition */
+        body, section, header, footer, article, .theme-card, .theme-input, .theme-border {
+            transition: background-color 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                        color 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .bg-theme-primary { background-color: var(--bg-primary); }
+        .bg-theme-secondary { background-color: var(--bg-secondary); }
+        .bg-theme-card { background-color: var(--bg-card); }
+        .text-theme-primary { color: var(--text-primary); }
+        .text-theme-secondary { color: var(--text-secondary); }
+        .text-theme-muted { color: var(--text-muted); }
+        .border-theme { border-color: var(--border-subtle); }
+        .text-gold { color: var(--accent-gold); }
+        .bg-gold { background-color: var(--accent-gold); }
+        .border-gold { border-color: var(--accent-gold); }
+
+        /* Custom Architectural Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 3px; }
+
+        /* Preloader Curtain */
+        #mn-preloader {
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.9s;
+        }
+        #mn-preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        @keyframes preloaderLine {
+            0% { transform: scaleX(0); transform-origin: left; }
+            50% { transform: scaleX(1); transform-origin: left; }
+            51% { transform: scaleX(1); transform-origin: right; }
+            100% { transform: scaleX(0); transform-origin: right; }
+        }
+        .preloader-bar {
+            animation: preloaderLine 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        }
+
+        /* Cinematic Ken Burns Slideshow Transitions */
+        .kb-slide {
+            position: absolute;
+            inset: -4%;
+            width: 108%;
+            height: 108%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(1.02) translate3d(0, 0, 0);
+            transition: opacity 2.6s cubic-bezier(0.25, 1, 0.5, 1), transform 11s linear;
+            will-change: opacity, transform;
+        }
+        .kb-slide.active {
+            opacity: 1;
+            transform: scale(1.12) translate3d(-1.5%, -1%, 0);
+        }
+        .kb-slide.alt-pan.active {
+            transform: scale(1.12) translate3d(1.5%, 1%, 0);
+        }
+
+        /* Hero Overlays adapting to Day/Night */
+        .hero-vignette-v {
+            background: linear-gradient(to bottom, var(--hero-overlay-top) 0%, var(--hero-overlay-mid) 50%, var(--hero-overlay-bot) 100%);
+        }
+        .hero-vignette-h {
+            background: linear-gradient(to right, var(--hero-overlay-bot) 0%, transparent 65%, var(--hero-overlay-top) 100%);
+        }
+
+        /* Line-by-Line Masked Typography Reveal */
+        .line-mask {
+            overflow: hidden;
+            display: block;
+        }
+        .line-inner {
+            display: block;
+            transform: translateY(115%);
+            opacity: 0;
+            transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease;
+        }
+        .is-visible .line-inner,
+        .hero-ready .line-inner {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.96) translateY(24px);
+            transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.is-visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Floating Architectural Geometry & Shimmering Gold Accent */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-16px) rotate(1.5deg); }
+        }
+        .animate-float-slow {
+            animation: floatSlow 9s ease-in-out infinite;
+        }
+
+        @keyframes gradientSweep {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gold-line {
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            background-size: 200% 100%;
+            animation: gradientSweep 5s ease infinite;
+        }
+
+        /* Subtle Architectural Grid Lines */
+        .arch-grid-lines {
+            background-size: 25% 100%;
+            background-image: linear-gradient(to right, var(--border-subtle) 1px, transparent 1px);
+        }
+
+        /* Service Card Interactive Hover Elevation */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .service-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        /* Respect Reduced Motion Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .line-inner, .reveal-up, .reveal-scale {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+
+    <!-- Instant Theme Initialization Before Paint to Prevent Flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('mn-theme');
+            const htmlEl = document.documentElement;
+            if (savedTheme === 'day') {
+                htmlEl.classList.remove('dark');
+            } else {
+                htmlEl.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+<body class="font-sans antialiased selection:bg-champagne selection:text-obsidian overflow-x-hidden">
+
+    <!-- SOPHISTICATED MN ARCHITECTURAL PRELOADER -->
+    <div id="mn-preloader" class="fixed inset-0 z-[100] bg-obsidian flex flex-col items-center justify-center px-6">
+        <div class="relative flex flex-col items-center">
+            <div class="w-16 h-16 border border-champagne/60 flex items-center justify-center rounded-sm mb-6">
+                <span class="font-serif text-3xl tracking-widest text-champagne font-semibold">MN</span>
+            </div>
+            <span class="text-[11px] tracking-widestPlus uppercase text-alabaster/90 font-medium mb-4">
+                M N Construction and Project
+            </span>
+            <div class="w-44 h-[1px] bg-white/15 overflow-hidden">
+                <div class="w-full h-full bg-champagne preloader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCROLL PROGRESS LINE -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-gold z-[60] w-0 transition-all duration-150"></div>
+
+    <!-- FLOATING TRANSPARENT / GLASS NAVIGATION BAR -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
+            
+            <!-- MN CONSTRUCTION AND PROJECT Logo -->
+            <a href="#top" class="flex items-center space-x-3.5 group focus:outline-none">
+                <div class="w-10 h-10 border border-gold flex items-center justify-center rounded-sm transition-all duration-500 group-hover:bg-gold group-hover:text-obsidian">
+                    <span class="font-serif text-xl tracking-wider text-gold group-hover:text-obsidian font-semibold transition-colors">MN</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xs sm:text-sm font-semibold tracking-architectural text-theme-primary uppercase">M N Construction</span>
+                    <span class="text-[10px] tracking-widestPlus text-gold uppercase mt-0.5">&amp; Project</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-9 text-xs tracking-architectural uppercase font-medium text-theme-muted">
+                <a href="#top" class="nav-link hover:text-theme-primary transition-colors duration-300 py-2">Home</a>
+                <a href="#about" class="nav-link hover:text-theme-primary transition-colors duration-300 py-2">About</a>
+                <a href="#approach" class="nav-link hover:text-theme-primary transition-colors duration-300 py-2">Our Approach</a>
+                <a href="#projects" class="nav-link hover:text-theme-primary transition-colors duration-300 py-2">Projects</a>
+                <a href="#contact" class="nav-link hover:text-theme-primary transition-colors duration-300 py-2">Contact</a>
+            </nav>
+
+            <!-- Right Controls: Day/Night Toggle & Mobile Menu Button -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <!-- Animated Day / Night Theme Switch -->
+                <button id="theme-toggle" type="button" aria-label="Toggle Day and Night Mode"
+                    class="relative inline-flex items-center h-9 px-3 rounded-full border border-theme bg-theme-card/80 backdrop-blur-md text-xs tracking-wider uppercase font-medium text-theme-primary hover:border-gold transition-all duration-500 shadow-sm group">
+                    <span class="flex items-center space-x-2">
+                        <i id="theme-icon-sun" data-lucide="sun" class="w-3.5 h-3.5 text-gold hidden"></i>
+                        <i id="theme-icon-moon" data-lucide="moon" class="w-3.5 h-3.5 text-gold"></i>
+                        <span id="theme-label" class="text-[10px] tracking-widestPlus hidden sm:inline">Night</span>
+                    </span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Toggle Navigation" class="lg:hidden p-2.5 text-theme-primary hover:text-gold transition-colors focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Slide-Down Glass Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-theme-primary/95 backdrop-blur-xl border-b border-theme px-6 py-8 space-y-6">
+            <nav class="flex flex-col space-y-5 text-xs tracking-architectural uppercase font-medium text-theme-muted">
+                <a href="#top" class="mobile-link hover:text-gold transition-colors py-1">Home</a>
+                <a href="#about" class="mobile-link hover:text-gold transition-colors py-1">About</a>
+                <a href="#approach" class="mobile-link hover:text-gold transition-colors py-1">Our Approach</a>
+                <a href="#projects" class="mobile-link hover:text-gold transition-colors py-1">Projects</a>
+                <a href="#contact" class="mobile-link text-gold pt-3 border-t border-theme">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. LUXURY HERO EXPERIENCE WITH CONTINUOUS KEN BURNS CINEMATIC BACKGROUND -->
+    <section id="top" class="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- Continuous Automatic Ken Burns Architectural Slideshow -->
+        <div id="hero-slideshow" class="absolute inset-0 z-0 overflow-hidden" data-parallax="0.22">
+            <!-- Slide 1: Contemporary Luxury Residence -->
+            <img 
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=85" 
+                onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/131518/C8A97E?text=M+N+CONSTRUCTION+AND+PROJECT';"
+                alt="Modern luxury architectural residence" 
+                class="kb-slide active"
+            >
+            <!-- Slide 2: Structural Engineering & Steel Architecture -->
+            <img 
+                src="https://images.pexels.com/photos/31865990/pexels-photo-31865990.jpeg?auto=compress&cs=tinysrgb&w=2000" 
+                onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/131518/C8A97E?text=ARCHITECTURAL+ENGINEERING';"
+                alt="Structural construction and architectural engineering" 
+                class="kb-slide alt-pan"
+            >
+            <!-- Slide 3: Completed Modern Estate -->
+            <img 
+                src="https://images.pexels.com/photos/12558958/pexels-photo-12558958.jpeg?auto=compress&cs=tinysrgb&w=2000" 
+                onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/131518/C8A97E?text=LUXURY+CONSTRUCTION';"
+                alt="Completed contemporary luxury architecture" 
+                class="kb-slide"
+            >
+            <!-- Slide 4: Architectural Concrete & Glass Detail -->
+            <img 
+                src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2200&q=85" 
+                onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/131518/C8A97E?text=PRECISION+CRAFT';"
+                alt="Modern architectural exterior lighting and concrete" 
+                class="kb-slide alt-pan"
+            >
+
+            <!-- Adaptive Day/Night Cinematic Overlays -->
+            <div class="absolute inset-0 hero-vignette-v transition-all duration-700"></div>
+            <div class="absolute inset-0 hero-vignette-h transition-all duration-700"></div>
+        </div>
+
+        <!-- Subtle Architectural Vertical Grid & Floating Geometric Frame -->
+        <div class="absolute inset-0 arch-grid-lines pointer-events-none z-0 max-w-7xl mx-auto"></div>
+        <div class="hidden lg:block absolute right-16 top-1/4 w-72 h-96 border border-gold/20 pointer-events-none animate-float-slow z-0"></div>
+
+        <!-- Hero Foreground Content -->
+        <div id="hero-content" class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 w-full pt-28 pb-16">
+            <div class="max-w-4xl">
+                <!-- Eyebrow Tag -->
+                <div class="flex items-center space-x-4 mb-8">
+                    <span class="h-[1px] w-12 bg-gold"></span>
+                    <span class="text-xs sm:text-sm tracking-widestPlus uppercase text-gold font-medium">
+                        M N Construction and Project
+                    </span>
+                </div>
+
+                <!-- Line-by-Line Animated Headline -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-theme-primary leading-[1.12] mb-8">
+                    <span class="line-mask">
+                        <span class="line-inner" style="transition-delay: 150ms;">BUILDING WITH PURPOSE.</span>
+                    </span>
+                    <span class="line-mask">
+                        <span class="line-inner font-semibold" style="transition-delay: 350ms;">DELIVERING WITH EXCELLENCE.</span>
+                    </span>
+                </h1>
+
+                <!-- Supporting Copy -->
+                <div class="line-mask mb-12">
+                    <p class="line-inner text-base sm:text-xl text-theme-secondary font-light max-w-2xl leading-relaxed" style="transition-delay: 550ms;">
+                        Quality construction. Professional project execution. A commitment to excellence.
+                    </p>
+                </div>
+
+                <!-- Dual Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 reveal-up" style="transition-delay: 700ms;">
+                    <a href="#projects" class="inline-flex items-center justify-center px-8 py-4 bg-gold text-obsidian text-xs font-semibold tracking-architectural uppercase rounded-sm hover:opacity-90 transition-all duration-300 shadow-lg group">
+                        <span>Explore Our Work</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 ml-2.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 border border-theme bg-theme-card/40 backdrop-blur-md text-theme-primary text-xs font-semibold tracking-architectural uppercase rounded-sm hover:border-gold hover:text-gold transition-all duration-300">
+                        <span>Contact Our Team</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cinematic Slide Indicator & Scroll Cue -->
+        <div class="absolute bottom-8 left-6 sm:left-12 right-6 sm:right-12 max-w-7xl mx-auto z-10 flex items-center justify-between">
+            <div class="flex items-center space-x-3" id="slide-indicators">
+                <span class="slide-dot w-8 h-[2px] bg-gold transition-all duration-500"></span>
+                <span class="slide-dot w-4 h-[2px] bg-theme-muted/40 transition-all duration-500"></span>
+                <span class="slide-dot w-4 h-[2px] bg-theme-muted/40 transition-all duration-500"></span>
+                <span class="slide-dot w-4 h-[2px] bg-theme-muted/40 transition-all duration-500"></span>
+            </div>
+
+            <div class="hidden sm:flex items-center space-x-3 opacity-75">
+                <span class="text-[10px] tracking-widestPlus uppercase text-theme-muted">Scroll to Explore</span>
+                <div class="w-10 h-[1px] animated-gold-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION WITH SUBTLE AMBIENT ARCHITECTURAL MOTION -->
+    <section id="about" class="py-28 sm:py-36 bg-theme-primary relative border-t border-theme overflow-hidden">
+        <!-- Subtle Parallax Architectural Backdrop Texture -->
+        <div class="absolute inset-0 opacity-[0.04] dark:opacity-[0.07] pointer-events-none" data-parallax="-0.12">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=75" alt="" class="w-full h-[120%] object-cover">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <!-- Left Column: Section Label -->
+                <div class="lg:col-span-4 reveal-up">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="w-2 h-2 bg-gold rounded-full"></span>
+                        <span class="text-xs tracking-widestPlus uppercase text-gold font-medium">01 / About</span>
+                    </div>
+                    <p class="text-xs uppercase tracking-architectural text-theme-muted">
+                        Kalfontein &bull; South Africa
+                    </p>
+                </div>
+
+                <!-- Right Column: Editorial Statement -->
+                <div class="lg:col-span-8 reveal-up" style="transition-delay: 150ms;">
+                    <h2 class="text-3xl sm:text-5xl font-light text-theme-primary tracking-tight leading-tight mb-8">
+                        <span class="line-mask"><span class="line-inner">A FOUNDATION BUILT ON</span></span>
+                        <span class="line-mask"><span class="line-inner font-semibold text-gold" style="transition-delay: 180ms;">EXCELLENCE.</span></span>
+                    </h2>
+                    <div class="w-24 h-[1px] animated-gold-line mb-8"></div>
+                    <p class="text-lg sm:text-xl text-theme-secondary font-light leading-relaxed mb-6">
+                        M N Construction and Project is a dedicated construction business committed to delivering superior workmanship and dependable project execution at accessible, competitive prices.
+                    </p>
+                    <p class="text-base text-theme-muted font-light leading-relaxed max-w-2xl">
+                        We approach every build with precision, accountability, and structural integrity—ensuring that each client receives enduring value and a seamless construction experience from initial planning through final handover.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. OUR APPROACH SECTION (Animated Service & Value Pillars) -->
+    <section id="approach" class="py-28 sm:py-36 bg-theme-secondary relative border-t border-theme overflow-hidden">
+        <!-- Floating Architectural Accent Ring -->
+        <div class="hidden md:block absolute -left-24 bottom-12 w-80 h-80 rounded-full border border-gold/15 pointer-events-none animate-float-slow"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            
+            <!-- Section Header -->
+            <div class="max-w-3xl mb-20 reveal-up">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="w-2 h-2 bg-gold rounded-full"></span>
+                    <span class="text-xs tracking-widestPlus uppercase text-gold font-medium">02 / Our Approach</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-light text-theme-primary tracking-tight">
+                    <span class="line-mask"><span class="line-inner">PRINCIPLES THAT DEFINE <span class="font-semibold">EVERY STRUCTURE.</span></span></span>
+                </h2>
+            </div>
+
+            <!-- Three Architectural Pillars -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Pillar 1 -->
+                <div class="service-card group bg-theme-card border border-theme hover:border-gold/60 p-10 sm:p-12 rounded-sm transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl flex flex-col justify-between reveal-scale">
+                    <div>
+                        <div class="flex items-center justify-between mb-12">
+                            <div class="w-12 h-12 rounded-sm border border-gold/40 bg-gold/5 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-obsidian transition-colors duration-500">
+                                <i data-lucide="compass" class="w-5 h-5 stroke-[1.5]"></i>
+                            </div>
+                            <span class="font-serif italic text-2xl text-theme-muted/60 group-hover:text-gold transition-colors">01</span>
+                        </div>
+                        <h3 class="text-lg font-semibold tracking-wider text-theme-primary uppercase mb-4 leading-snug">
+                            Quality Workmanship
+                        </h3>
+                        <p class="text-sm text-theme-muted font-light leading-relaxed">
+                            Uncompromising attention to structural detail, clean finishes, and durable materials executed to exacting standards on every site.
+                        </p>
+                    </div>
+                    <div class="mt-10 pt-6 border-t border-theme">
+                        <span class="text-[11px] tracking-widestPlus uppercase text-gold">Precision Execution</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="service-card group bg-theme-card border border-theme hover:border-gold/60 p-10 sm:p-12 rounded-sm transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl flex flex-col justify-between reveal-scale" style="transition-delay: 140ms;">
+                    <div>
+                        <div class="flex items-center justify-between mb-12">
+                            <div class="w-12 h-12 rounded-sm border border-gold/40 bg-gold/5 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-obsidian transition-colors duration-500">
+                                <i data-lucide="layers" class="w-5 h-5 stroke-[1.5]"></i>
+                            </div>
+                            <span class="font-serif italic text-2xl text-theme-muted/60 group-hover:text-gold transition-colors">02</span>
+                        </div>
+                        <h3 class="text-lg font-semibold tracking-wider text-theme-primary uppercase mb-4 leading-snug">
+                            Professional Project Delivery
+                        </h3>
+                        <p class="text-sm text-theme-muted font-light leading-relaxed">
+                            Structured timelines, transparent communication, and disciplined site management designed to keep your project moving smoothly.
+                        </p>
+                    </div>
+                    <div class="mt-10 pt-6 border-t border-theme">
+                        <span class="text-[11px] tracking-widestPlus uppercase text-gold">Structured Management</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="service-card group bg-theme-card border border-theme hover:border-gold/60 p-10 sm:p-12 rounded-sm transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl flex flex-col justify-between reveal-scale" style="transition-delay: 280ms;">
+                    <div>
+                        <div class="flex items-center justify-between mb-12">
+                            <div class="w-12 h-12 rounded-sm border border-gold/40 bg-gold/5 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-obsidian transition-colors duration-500">
+                                <i data-lucide="shield-check" class="w-5 h-5 stroke-[1.5]"></i>
+                            </div>
+                            <span class="font-serif italic text-2xl text-theme-muted/60 group-hover:text-gold transition-colors">03</span>
+                        </div>
+                        <h3 class="text-lg font-semibold tracking-wider text-theme-primary uppercase mb-4 leading-snug">
+                            Affordable Construction Solutions
+                        </h3>
+                        <p class="text-sm text-theme-muted font-light leading-relaxed">
+                            Cost-conscious planning and practical resource efficiency that deliver high-calibre construction without inflated overheads.
+                        </p>
+                    </div>
+                    <div class="mt-10 pt-6 border-t border-theme">
+                        <span class="text-[11px] tracking-widestPlus uppercase text-gold">Enduring Value</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROJECTS SHOWCASE SECTION (Three Large Architectural Studies) -->
+    <section id="projects" class="py-28 sm:py-36 bg-theme-primary relative border-t border-theme overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            
+            <!-- Header Row -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal-up">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="w-2 h-2 bg-gold rounded-full"></span>
+                        <span class="text-xs tracking-widestPlus uppercase text-gold font-medium">03 / Projects</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-light text-theme-primary tracking-tight">
+                        <span class="line-mask"><span class="line-inner">STANDARDS OF <span class="font-semibold">CRAFTSMANSHIP.</span></span></span>
+                    </h2>
+                </div>
+                <p class="text-xs tracking-architectural uppercase text-theme-muted max-w-sm">
+                    Architectural Concept Studies &amp; Visual Benchmarks
+                </p>
+            </div>
+
+            <!-- Three Curated Architectural Frames -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Image 1: Contemporary Residential -->
+                <article class="group relative overflow-hidden rounded-sm bg-theme-card border border-theme hover:border-gold/50 shadow-sm reveal-scale">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img 
+                            src="https://images.pexels.com/photos/12558958/pexels-photo-12558958.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x1000/1C1F24/C8A97E?text=Architectural+Study+I';"
+                            alt="Contemporary Residential Architecture - Photo by Christopher Moon" 
+                            class="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-110"
+                        >
+                    </div>
+                    <div class="p-6 sm:p-8 bg-theme-card border-t border-theme flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] tracking-widestPlus uppercase text-gold mb-1">Concept Study 01</span>
+                            <h3 class="text-sm font-medium tracking-wider uppercase text-theme-primary">Contemporary Residential</h3>
+                        </div>
+                        <span class="text-xs font-serif italic text-theme-muted">Visual Benchmark</span>
+                    </div>
+                </article>
+
+                <!-- Image 2: Commercial & Structural -->
+                <article class="group relative overflow-hidden rounded-sm bg-theme-card border border-theme hover:border-gold/50 shadow-sm reveal-scale" style="transition-delay: 150ms;">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img 
+                            src="https://images.pexels.com/photos/31865990/pexels-photo-31865990.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x1000/1C1F24/C8A97E?text=Architectural+Study+II';"
+                            alt="Commercial & Structural Construction - Photo by Davide Comunian" 
+                            class="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-110"
+                        >
+                    </div>
+                    <div class="p-6 sm:p-8 bg-theme-card border-t border-theme flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] tracking-widestPlus uppercase text-gold mb-1">Concept Study 02</span>
+                            <h3 class="text-sm font-medium tracking-wider uppercase text-theme-primary">Commercial &amp; Structural</h3>
+                        </div>
+                        <span class="text-xs font-serif italic text-theme-muted">Visual Benchmark</span>
+                    </div>
+                </article>
+
+                <!-- Image 3: Refined Exterior Finishes -->
+                <article class="group relative overflow-hidden rounded-sm bg-theme-card border border-theme hover:border-gold/50 shadow-sm reveal-scale" style="transition-delay: 300ms;">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x1000/1C1F24/C8A97E?text=Architectural+Study+III';"
+                            alt="Modern Exterior Stone and Lighting" 
+                            class="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-110"
+                        >
+                    </div>
+                    <div class="p-6 sm:p-8 bg-theme-card border-t border-theme flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] tracking-widestPlus uppercase text-gold mb-1">Concept Study 03</span>
+                            <h3 class="text-sm font-medium tracking-wider uppercase text-theme-primary">Refined Exterior Finishes</h3>
+                        </div>
+                        <span class="text-xs font-serif italic text-theme-muted">Visual Benchmark</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Subtle Transparency Caption -->
+            <div class="mt-8 flex items-center justify-end reveal-up">
+                <p class="text-[11px] text-theme-muted tracking-wide">
+                    * Architectural reference imagery illustrating design direction and finishing standards.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. CLIENT TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-28 sm:py-36 bg-theme-secondary relative border-t border-theme overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            
+            <!-- Section Header -->
+            <div class="max-w-3xl mb-16 reveal-up">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="w-2 h-2 bg-gold rounded-full"></span>
+                    <span class="text-xs tracking-widestPlus uppercase text-gold font-medium">04 / Client Endorsements</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-light text-theme-primary tracking-tight">
+                    <span class="line-mask"><span class="line-inner">TRUSTED BY <span class="font-semibold">PROPERTY OWNERS.</span></span></span>
+                </h2>
+            </div>
+
+            <!-- Three South African Client Testimonials -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-theme-card border border-theme hover:border-gold/40 p-10 rounded-sm flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 shadow-sm reveal-up">
+                    <div>
+                        <i data-lucide="quote" class="w-6 h-6 text-gold/70 mb-6 stroke-[1.5]"></i>
+                        <p class="text-sm sm:text-base text-theme-secondary font-light leading-relaxed mb-8 italic">
+                            "M N Construction and Project handled our residential extension in Midrand with remarkable discipline. Their workmanship is clean, the pricing was fair, and they kept us informed at every stage."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-theme">
+                        <h4 class="text-xs font-semibold tracking-wider uppercase text-theme-primary">Sipho Ndlovu</h4>
+                        <span class="text-[11px] tracking-widestPlus uppercase text-gold mt-1 block">Midrand, Gauteng</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-theme-card border border-theme hover:border-gold/40 p-10 rounded-sm flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 shadow-sm reveal-up" style="transition-delay: 140ms;">
+                    <div>
+                        <i data-lucide="quote" class="w-6 h-6 text-gold/70 mb-6 stroke-[1.5]"></i>
+                        <p class="text-sm sm:text-base text-theme-secondary font-light leading-relaxed mb-8 italic">
+                            "Finding a reliable builder who respects both budget and timelines is rare. Their attention to structural detail and neat finishing gave us complete peace of mind from start to handover."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-theme">
+                        <h4 class="text-xs font-semibold tracking-wider uppercase text-theme-primary">Annalise van der Merwe</h4>
+                        <span class="text-[11px] tracking-widestPlus uppercase text-gold mt-1 block">Centurion, Pretoria</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-theme-card border border-theme hover:border-gold/40 p-10 rounded-sm flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 shadow-sm reveal-up" style="transition-delay: 280ms;">
+                    <div>
+                        <i data-lucide="quote" class="w-6 h-6 text-gold/70 mb-6 stroke-[1.5]"></i>
+                        <p class="text-sm sm:text-base text-theme-secondary font-light leading-relaxed mb-8 italic">
+                            "Professional, transparent, and committed to quality. The team delivered our renovation project in Kempton Park on schedule without compromising on materials or craftsmanship."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-theme">
+                        <h4 class="text-xs font-semibold tracking-wider uppercase text-theme-primary">Kagiso Molefe</h4>
+                        <span class="text-[11px] tracking-widestPlus uppercase text-gold mt-1 block">Kempton Park, Ekurhuleni</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FREQUENTLY ASKED QUESTIONS SECTION -->
+    <section id="faq" class="py-28 sm:py-36 bg-theme-primary relative border-t border-theme">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Left Column: Header -->
+                <div class="lg:col-span-4 reveal-up">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="w-2 h-2 bg-gold rounded-full"></span>
+                        <span class="text-xs tracking-widestPlus uppercase text-gold font-medium">05 / Clarifications</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-light text-theme-primary tracking-tight leading-tight mb-6">
+                        FREQUENTLY ASKED <span class="font-semibold text-gold">QUESTIONS.</span>
+                    </h2>
+                    <p class="text-sm text-theme-muted font-light leading-relaxed">
+                        Clear answers regarding our project consultations, quotations, and construction execution across Gauteng.
+                    </p>
+                </div>
+
+                <!-- Right Column: Architectural Accordion -->
+                <div class="lg:col-span-8 space-y-4 reveal-up" style="transition-delay: 140ms;">
+                    
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item border border-theme bg-theme-card rounded-sm overflow-hidden transition-all duration-300">
+                        <button type="button" class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="text-sm sm:text-base font-medium text-theme-primary tracking-wide">What types of construction projects do you undertake?</span>
+                            <i data-lucide="plus" class="faq-icon w-4 h-4 text-gold shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 sm:px-8 pb-6 text-sm text-theme-muted font-light leading-relaxed border-t border-theme pt-4">
+                            We execute residential builds, home extensions, structural renovations, boundary walls, paving, roofing, and general building maintenance—tailored to deliver durable workmanship at competitive pricing.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item border border-theme bg-theme-card rounded-sm overflow-hidden transition-all duration-300">
+                        <button type="button" class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="text-sm sm:text-base font-medium text-theme-primary tracking-wide">Which areas do you service?</span>
+                            <i data-lucide="plus" class="faq-icon w-4 h-4 text-gold shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 sm:px-8 pb-6 text-sm text-theme-muted font-light leading-relaxed border-t border-theme pt-4">
+                            Based at 142 West St, Kalfontein, we serve clients across Midrand, Kempton Park, Tembisa, Centurion, Johannesburg, and surrounding Gauteng communities.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item border border-theme bg-theme-card rounded-sm overflow-hidden transition-all duration-300">
+                        <button type="button" class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="text-sm sm:text-base font-medium text-theme-primary tracking-wide">How do I request a project quotation and site assessment?</span>
+                            <i data-lucide="plus" class="faq-icon w-4 h-4 text-gold shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 sm:px-8 pb-6 text-sm text-theme-muted font-light leading-relaxed border-t border-theme pt-4">
+                            You can contact us directly via WhatsApp or phone on 067 124 5174, or submit your project details in the enquiry form below. We arrange a convenient site visit to assess your requirements and prepare an itemized, transparent quote.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item border border-theme bg-theme-card rounded-sm overflow-hidden transition-all duration-300">
+                        <button type="button" class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="text-sm sm:text-base font-medium text-theme-primary tracking-wide">Can you work with my existing architectural plans, and can I supply materials?</span>
+                            <i data-lucide="plus" class="faq-icon w-4 h-4 text-gold shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 sm:px-8 pb-6 text-sm text-theme-muted font-light leading-relaxed border-t border-theme pt-4">
+                            Yes. We build strictly according to your approved architectural drawings and offer flexible contracting options—whether you prefer a full supply-and-build package or labour-only execution.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CONTACT & LOCATION SECTION WITH AMBIENT MOTION -->
+    <section id="contact" class="py-28 sm:py-36 bg-theme-secondary relative border-t border-theme overflow-hidden">
+        <!-- Subtle Moving Architectural Backdrop -->
+        <div class="absolute inset-0 opacity-[0.04] dark:opacity-[0.06] pointer-events-none" data-parallax="-0.1">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=75" alt="" class="w-full h-[120%] object-cover">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            
+            <!-- Section Header -->
+            <div class="max-w-3xl mb-16 reveal-up">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="w-2 h-2 bg-gold rounded-full"></span>
+                    <span class="text-xs tracking-widestPlus uppercase text-gold font-medium">06 / Contact</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-light text-theme-primary tracking-tight leading-tight">
+                    <span class="line-mask"><span class="line-inner">LET'S BUILD SOMETHING</span></span>
+                    <span class="line-mask"><span class="line-inner font-semibold text-gold" style="transition-delay: 180ms;">EXCEPTIONAL.</span></span>
+                </h2>
+            </div>
+
+            <!-- Two-Column Contact Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Left Column: Direct Credentials, WhatsApp, Click-to-Call & Map -->
+                <div class="lg:col-span-5 space-y-10 reveal-up">
+                    
+                    <div class="bg-theme-card border border-theme p-8 sm:p-10 rounded-sm space-y-8 shadow-sm">
+                        <div>
+                            <span class="text-[10px] tracking-widestPlus uppercase text-gold block mb-2">Corporate Office</span>
+                            <h3 class="text-lg font-semibold tracking-wider text-theme-primary uppercase">
+                                M N Construction and Project
+                            </h3>
+                        </div>
+
+                        <!-- Phone / Click-to-Call -->
+                        <div class="space-y-2">
+                            <span class="text-[11px] tracking-architectural uppercase text-theme-muted block">Direct Telephone / WhatsApp</span>
+                            <a href="tel:+27671245174" class="inline-flex items-center text-xl sm:text-2xl font-light text-theme-primary hover:text-gold transition-colors">
+                                <i data-lucide="phone" class="w-5 h-5 mr-3 text-gold"></i>
+                                <span>067 124 5174</span>
+                            </a>
+                        </div>
+
+                        <!-- Physical Address -->
+                        <div class="space-y-2">
+                            <span class="text-[11px] tracking-architectural uppercase text-theme-muted block">Headquarters</span>
+                            <p class="flex items-start text-sm sm:text-base text-theme-secondary font-light leading-relaxed">
+                                <i data-lucide="map-pin" class="w-5 h-5 mr-3 text-gold shrink-0 mt-0.5"></i>
+                                <span>142 West St, Kalfontein, 2031, South Africa</span>
+                            </p>
+                        </div>
+
+                        <!-- Action Buttons: Direct WhatsApp & Click to Call -->
+                        <div class="pt-4 flex flex-col sm:flex-row gap-3">
+                            <a href="https://wa.me/27671245174?text=Hello%20M%20N%20Construction%20and%20Project%2C%20I%20would%20like%20to%20enquire%20about%20a%20construction%20project." 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="flex-1 inline-flex items-center justify-center px-5 py-3.5 bg-gold text-obsidian text-xs font-semibold tracking-architectural uppercase rounded-sm hover:opacity-90 transition-all">
+                                <i data-lucide="message-square" class="w-4 h-4 mr-2"></i>
+                                <span>WhatsApp Us</span>
+                            </a>
+                            <a href="tel:+27671245174" 
+                               class="flex-1 inline-flex items-center justify-center px-5 py-3.5 border border-theme text-theme-primary text-xs font-semibold tracking-architectural uppercase rounded-sm hover:border-gold hover:text-gold transition-colors">
+                                <i data-lucide="phone-call" class="w-4 h-4 mr-2"></i>
+                                <span>Call Now</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Location Embed -->
+                    <div class="rounded-sm overflow-hidden border border-theme bg-theme-card h-64 relative shadow-sm">
+                        <iframe 
+                            id="google-map-frame"
+                            title="M N Construction and Project Location - 142 West St, Kalfontein, 2031, South Africa"
+                            src="https://maps.google.com/maps?q=142%20West%20St,%20Kalfontein,%202031,%20South%20Africa&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            class="w-full h-full border-0 transition-all duration-700"
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Clean Executive Enquiry Form -->
+                <div class="lg:col-span-7 reveal-up" style="transition-delay: 150ms;">
+                    <div class="bg-theme-card border border-theme p-8 sm:p-12 rounded-sm h-full flex flex-col justify-between shadow-sm">
+                        <div>
+                            <h3 class="text-xl font-light text-theme-primary tracking-wide mb-2">Project Enquiry</h3>
+                            <p class="text-sm text-theme-muted font-light mb-8">
+                                Share the scope of your upcoming build or renovation. Our team will respond promptly.
+                            </p>
+
+                            <form id="enquiry-form" class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="fullName" class="block text-[11px] tracking-architectural uppercase text-theme-muted mb-2">Full Name *</label>
+                                        <input type="text" id="fullName" name="fullName" required placeholder="e.g. Thabo Mokoena"
+                                            class="w-full bg-theme-secondary border border-theme focus:border-gold rounded-sm px-4 py-3.5 text-sm text-theme-primary placeholder-theme-muted/50 focus:outline-none transition-colors">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-[11px] tracking-architectural uppercase text-theme-muted mb-2">Phone / WhatsApp *</label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="e.g. 067 124 5174"
+                                            class="w-full bg-theme-secondary border border-theme focus:border-gold rounded-sm px-4 py-3.5 text-sm text-theme-primary placeholder-theme-muted/50 focus:outline-none transition-colors">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="email" class="block text-[11px] tracking-architectural uppercase text-theme-muted mb-2">Email Address</label>
+                                        <input type="email" id="email" name="email" placeholder="name@company.co.za"
+                                            class="w-full bg-theme-secondary border border-theme focus:border-gold rounded-sm px-4 py-3.5 text-sm text-theme-primary placeholder-theme-muted/50 focus:outline-none transition-colors">
+                                    </div>
+                                    <div>
+                                        <label for="projectType" class="block text-[11px] tracking-architectural uppercase text-theme-muted mb-2">Project Scope</label>
+                                        <select id="projectType" name="projectType"
+                                            class="w-full bg-theme-secondary border border-theme focus:border-gold rounded-sm px-4 py-3.5 text-sm text-theme-primary focus:outline-none transition-colors">
+                                            <option value="New Residential Build">New Residential Build</option>
+                                            <option value="Renovation & Extension">Renovation &amp; Extension</option>
+                                            <option value="Commercial / Structural Work">Commercial / Structural Work</option>
+                                            <option value="General Construction Enquiry">General Construction Enquiry</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-[11px] tracking-architectural uppercase text-theme-muted mb-2">Project Details *</label>
+                                    <textarea id="message" name="message" rows="5" required placeholder="Briefly describe your location, project requirements, and preferred timeline..."
+                                        class="w-full bg-theme-secondary border border-theme focus:border-gold rounded-sm px-4 py-3.5 text-sm text-theme-primary placeholder-theme-muted/50 focus:outline-none transition-colors resize-none"></textarea>
+                                </div>
+
+                                <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                    <button type="submit" class="px-8 py-4 bg-gold text-obsidian text-xs font-semibold tracking-architectural uppercase rounded-sm hover:opacity-90 transition-all duration-300 inline-flex items-center justify-center shadow-md">
+                                        <span>Submit Enquiry</span>
+                                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2.5"></i>
+                                    </button>
+                                    <span class="text-xs text-theme-muted font-light">
+                                        Or send directly via WhatsApp upon submission
+                                    </span>
+                                </div>
+                            </form>
+
+                            <!-- Confirmation Message Box -->
+                            <div id="form-feedback" class="hidden mt-8 p-6 bg-theme-secondary border border-gold/60 rounded-sm">
+                                <div class="flex items-start space-x-3.5">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
+                                    <div>
+                                        <h4 class="text-sm font-semibold uppercase tracking-wider text-theme-primary mb-1">Enquiry Prepared</h4>
+                                        <p class="text-sm text-theme-secondary font-light leading-relaxed mb-4" id="feedback-text">
+                                            Thank you. Your enquiry details have been recorded. You may also forward this directly to our WhatsApp desk for immediate attention.
+                                        </p>
+                                        <a id="whatsapp-forward-btn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold tracking-architectural uppercase text-gold hover:opacity-80 transition-opacity">
+                                            <span>Open in WhatsApp</span>
+                                            <i data-lucide="external-link" class="w-3.5 h-3.5 ml-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MINIMALIST CORPORATE FOOTER -->
+    <footer class="bg-theme-primary border-t border-theme py-14">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <span class="font-serif text-lg text-gold font-semibold">MN</span>
+                <span class="text-theme-muted/30">|</span>
+                <span class="text-xs tracking-architectural uppercase text-theme-primary font-medium">M N Construction and Project</span>
+            </div>
+
+            <div class="text-xs text-theme-muted font-light text-center md:text-right space-y-1">
+                <p>142 West St, Kalfontein, 2031, South Africa &bull; Tel: <a href="tel:+27671245174" class="hover:text-gold transition-colors">067 124 5174</a></p>
+                <p class="opacity-70">&copy; <span id="current-year"></span> M N Construction and Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CINEMATIC MOTION, KEN BURNS SLIDESHOW & DAY/NIGHT THEME ENGINE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Initialize Lucide Icons
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // 2. Preloader Curtain & Hero Entrance Choreography
+            const preloader = document.getElementById('mn-preloader');
+            const heroContent = document.getElementById('hero-content');
+
+            window.setTimeout(() => {
+                if (preloader) preloader.classList.add('loaded');
+                if (heroContent) heroContent.classList.add('hero-ready');
+            }, 850);
+
+            // 3. Set Dynamic Year
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // 4. Day / Night Theme Switcher with Persistent Memory
+            const htmlEl = document.documentElement;
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIconSun = document.getElementById('theme-icon-sun');
+            const themeIconMoon = document.getElementById('theme-icon-moon');
+            const themeLabel = document.getElementById('theme-label');
+            const mapFrame = document.getElementById('google-map-frame');
+
+            function syncThemeUI() {
+                const isDark = htmlEl.classList.contains('dark');
+                if (isDark) {
+                    themeIconSun.classList.add('hidden');
+                    themeIconMoon.classList.remove('hidden');
+                    if (themeLabel) themeLabel.textContent = 'Night';
+                    if (mapFrame) {
+                        mapFrame.classList.add('grayscale', 'invert', 'contrast-90', 'opacity-85');
+                        mapFrame.classList.remove('opacity-95');
+                    }
+                } else {
+                    themeIconMoon.classList.add('hidden');
+                    themeIconSun.classList.remove('hidden');
+                    if (themeLabel) themeLabel.textContent = 'Day';
+                    if (mapFrame) {
+                        mapFrame.classList.remove('grayscale', 'invert', 'contrast-90', 'opacity-85');
+                        mapFrame.classList.add('opacity-95');
+                    }
+                }
+            }
+
+            syncThemeUI();
+
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    htmlEl.classList.toggle('dark');
+                    const isDark = htmlEl.classList.contains('dark');
+                    localStorage.setItem('mn-theme', isDark ? 'night' : 'day');
+                    syncThemeUI();
+                });
+            }
+
+            // 5. Continuous Ken Burns Cinematic Hero Slideshow
+            const slides = document.querySelectorAll('#hero-slideshow .kb-slide');
+            const slideDots = document.querySelectorAll('#slide-indicators .slide-dot');
+            let currentSlide = 0;
+
+            if (slides.length > 1) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    if (slideDots[currentSlide]) {
+                        slideDots[currentSlide].classList.remove('w-8', 'bg-gold');
+                        slideDots[currentSlide].classList.add('w-4', 'bg-theme-muted/40');
+                    }
+
+                    currentSlide = (currentSlide + 1) % slides.length;
+
+                    slides[currentSlide].classList.add('active');
+                    if (slideDots[currentSlide]) {
+                        slideDots[currentSlide].classList.remove('w-4', 'bg-theme-muted/40');
+                        slideDots[currentSlide].classList.add('w-8', 'bg-gold');
+                    }
+                }, 6500);
+            }
+
+            // 6. Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // 7. Floating Glass Navbar Transformation, Scroll Progress & Smooth Parallax
+            const navbar = document.getElementById('navbar');
+            const scrollProgress = document.getElementById('scroll-progress');
+            const parallaxTargets = document.querySelectorAll('[data-parallax]');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function handleScroll() {
+                const scrollY = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+                // Top Scroll Progress Bar
+                if (scrollProgress && docHeight > 0) {
+                    const pct = Math.min(100, Math.max(0, (scrollY / docHeight) * 100));
+                    scrollProgress.style.width = pct + '%';
+                }
+
+                // Navbar Floating Glass Effect
+                if (navbar) {
+                    if (scrollY > 40) {
+                        navbar.style.backgroundColor = 'var(--nav-scrolled)';
+                        navbar.classList.add('backdrop-blur-xl', 'border-theme', 'shadow-lg');
+                        navbar.classList.remove('border-transparent');
+                    } else {
+                        navbar.style.backgroundColor = 'transparent';
+                        navbar.classList.remove('backdrop-blur-xl', 'border-theme', 'shadow-lg');
+                        navbar.classList.add('border-transparent');
+                    }
+                }
+
+                // Smooth GPU Parallax Across Sections
+                if (!prefersReducedMotion && window.innerWidth >= 768) {
+                    parallaxTargets.forEach(el => {
+                        const speed = parseFloat(el.getAttribute('data-parallax')) || 0;
+                        const rect = el.parentElement.getBoundingClientRect();
+                        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                            const offset = rect.top * speed;
+                            el.style.transform = `translate3d(0, ${offset}px, 0)`;
+                        }
+                    });
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            // 8. Intersection Observer for All Section Reveals & Masked Headings
+            const animatedElements = document.querySelectorAll('.reveal-up, .reveal-scale, h2');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            animatedElements.forEach(el => revealObserver.observe(el));
+
+            // 9. FAQ Accordion Interaction
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const currentItem = toggle.closest('.faq-item');
+                    const currentContent = currentItem.querySelector('.faq-content');
+                    const currentIcon = currentItem.querySelector('.faq-icon');
+                    const isOpen = !currentContent.classList.contains('hidden');
+
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.querySelector('.faq-content').classList.add('hidden');
+                        item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                        item.classList.remove('border-gold/60');
+                    });
+
+                    if (!isOpen) {
+                        currentContent.classList.remove('hidden');
+                        currentIcon.style.transform = 'rotate(45deg)';
+                        currentItem.classList.add('border-gold/60');
+                    }
+                });
+            });
+
+            // 10. Executive Enquiry Form Handler with Instant WhatsApp Integration
+            const enquiryForm = document.getElementById('enquiry-form');
+            const formFeedback = document.getElementById('form-feedback');
+            const whatsappForwardBtn = document.getElementById('whatsapp-forward-btn');
+
+            if (enquiryForm) {
+                enquiryForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('fullName').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const scope = document.getElementById('projectType').value;
+                    const details = document.getElementById('message').value.trim();
+
+                    const waMessage = `Hello M N Construction and Project,%0A%0A*New Project Enquiry*%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A${email ? `*Email:* ${encodeURIComponent(email)}%0A` : ''}*Scope:* ${encodeURIComponent(scope)}%0A*Details:* ${encodeURIComponent(details)}`;
+                    const waUrl = `https://wa.me/27671245174?text=${waMessage}`;
+
+                    if (whatsappForwardBtn) {
+                        whatsappForwardBtn.href = waUrl;
+                    }
+
+                    if (formFeedback) {
+                        formFeedback.classList.remove('hidden');
+                        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+
+                    enquiryForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
